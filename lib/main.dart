@@ -37,39 +37,72 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 163, 255, 250),
       ),
 
-      body:Stack(
-  alignment: Alignment.center, // จัดกึ่งกลาง children ที่ไม่ได้กำหนดตำแหน่ง
-  children: <Widget>[
-    // รูปภาพพื้นหลัง
-    Image.network('https://picsum.photos/id/1015/300/300', fit: BoxFit.cover),
+      body: Stack(
+        alignment:
+            Alignment.center, // จัดกึ่งกลาง children ที่ไม่ได้กำหนดตำแหน่ง
+        children: <Widget>[
+          // รูปภาพพื้นหลัง
+          Image.network(
+            'https://picsum.photos/id/1015/300/300',
+            fit: BoxFit.cover,
+          ),
 
-    // Text ที่กำหนดตำแหน่งไว้มุมบนซ้าย
-    Positioned(
-      top: 10.0,
-      left: 10.0,
-      child: Container(
-        padding: const EdgeInsets.all(8.0),
-        color: Colors.black.withOpacity(0.5), // พื้นหลังกึ่งโปร่งใส
-        child: const Text(
-          'Top Left',
-          style: TextStyle(color: Colors.white),
-        ),
+          // Text ที่กำหนดตำแหน่งไว้มุมบนซ้าย
+          Positioned(
+            top: 10.0,
+            left: 10.0,
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              color: Colors.black.withOpacity(0.5), // พื้นหลังกึ่งโปร่งใส
+              child: const Text(
+                'Top Left',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+           Positioned(
+            top: 10.0,
+            right: 10.0,
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              color: Colors.black.withOpacity(0.5), // พื้นหลังกึ่งโปร่งใส
+              child: const Text(
+                'Top Right',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          // Icon ที่กำหนดตำแหน่งไว้มุมล่างขวา
+          Positioned(
+            bottom: 10.0,
+            right: 10.0,
+            child: Container(
+              padding: const EdgeInsets.all(4.0),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                shape: BoxShape.circle, // ทำให้เป็นป้ายวงกลม
+              ),
+              child: const Icon(
+                Icons.notifications,
+                color: Colors.white,
+                size: 20,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 10.0,
+            left: 10.0,
+            child: Container(
+              padding: const EdgeInsets.all(11.0),
+              color: Colors.black.withOpacity(0.5), // พื้นหลังกึ่งโปร่งใส
+              child: const Text(
+                'Bottom Left',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ],
       ),
-    ),
-
-    // Icon ที่กำหนดตำแหน่งไว้มุมล่างขวา
-    Positioned(
-      bottom: 10.0,
-      right: 10.0,
-      child: Container(
-         padding: const EdgeInsets.all(4.0),
-         decoration: BoxDecoration(
-           color: Colors.red,
-           shape: BoxShape.circle, // ทำให้เป็นป้ายวงกลม
-         ),
-         child: const Icon(Icons.notifications, color: Colors.white, size: 20),
-      ),
-    ),
-  ],
-),
+    );
   }
+}
