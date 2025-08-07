@@ -39,10 +39,10 @@ class MyHomePage extends StatelessWidget {
 
       body: GridView.builder(
         padding: const EdgeInsets.all(8.0),
-        itemCount: 30,
+        itemCount: 100,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 8.0,
+          crossAxisSpacing: 5.0,
           mainAxisSpacing: 8.0,
           childAspectRatio: 1.0
         ), //3item/colunm
@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
         itemBuilder: (BuildContext context, int idx) {
           return Container(
             decoration: BoxDecoration(
-            color: Colors.lightGreen[100 + (idx % 8) * 100],
+            color: Colors.lightGreen[100 + (idx % 6) * 100],
             borderRadius: BorderRadius.circular(8.0),
             ),
           child: Text(
