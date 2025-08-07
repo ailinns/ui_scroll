@@ -38,7 +38,23 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
 
-      body: GridView.count()
+      body: ListView.builder(
+        itemCount: myData.length, // ใช้ความยาวของลิสต์ข้อมูลของเรา
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            leading: const Icon(Icons.label_important_outline),
+            title: Text(myData[index]), // แสดงข้อมูลจากลิสต์
+            subtitle: Text('คำอธิบายสำหรับรายการ $index'),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+            ), // ไอคอนท้าย (ทางเลือก)
+            onTap: () {
+              print('แตะที่: ${myData[index]} (index $index)');
+            },
+          );
+        },
+      ),
     );
   }
 }
