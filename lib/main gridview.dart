@@ -44,19 +44,16 @@ class MyHomePage extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 5.0,
           mainAxisSpacing: 8.0,
-          childAspectRatio: 1.0
+          childAspectRatio: 1.5,
         ), //3item/colunm
-        
+
         itemBuilder: (BuildContext context, int idx) {
           return Container(
             decoration: BoxDecoration(
-            color: Colors.lightGreen[100 + (idx % 6) * 100],
-            borderRadius: BorderRadius.circular(8.0),
+              color: Colors.lightGreen[100 + (idx % 6) * 100],
+              borderRadius: BorderRadius.circular(8.0),
             ),
-          child: Text(
-            items[idx],
-            style: const TextStyle(fontSize: 18, color: Colors.black87),
-          ),
+            child: Center(child: Text('Tile $idx')),
           );
         },
       ),
